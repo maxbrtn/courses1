@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="animalPageController">
+	<aura:attribute name="idOfAnimal" type="String"/>
+    
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="isButtonDisabled" type="Boolean" default="true"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    
+    <lightning:card title="Animal Search" class="card"> 
+    	<lightning:input class="input" aura:id="inp" name="input" label="Enter id of Animal" value="{!v.idOfAnimal}" onchange="{! c.handleInputChange}"/>
+        <aura:if isTrue="{!!v.isValid}">
+            <p style="color: red; font-size: 12px; margin-top: 5px;">input valid id</p>
+        </aura:if> 
+        <lightning:button class="btn " label="Push me" title="Neutral action" onclick="{! c.handleClick }" disabled="{! v.isButtonDisabled}"/>
+		
+         <aura:if isTrue="{!v.data}">
+            <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+          </aura:if> 
+    </lightning:card>
+</aura:component>

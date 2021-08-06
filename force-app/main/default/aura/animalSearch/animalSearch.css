@@ -1,0 +1,11 @@
+.THIS {
+}
+
+.THIS.card {
+    padding: 0px 10px;
+}
+
+.THIS .btn {
+    display: block;
+    margin: 10px 0px;
+}
