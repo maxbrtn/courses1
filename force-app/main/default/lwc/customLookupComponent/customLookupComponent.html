@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Hello" class="card">
+        <lightning-input class="input" label="New" type="text" onfocus={handleFocus} onblur={handleBlur} onchange={handleChange} value={inputValue}></lightning-input>
+        <div class="drop" if:true={data}>
+            <template for:each={data} for:item="item">
+                <p class="item" key={item.id} onclick={clickSelected}>{item.Name}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

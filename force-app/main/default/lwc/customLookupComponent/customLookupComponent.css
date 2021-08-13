@@ -1,0 +1,20 @@
+.input, .drop {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.drop {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+}
+
+.item {
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.item:hover {
+    background-color: #dadada;
+}
